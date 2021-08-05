@@ -1,0 +1,313 @@
+@import "../../../variables";
+
+.left-nav {
+  height: 100vh;
+  width: 3.6458333333333335vw;
+  background-color: #122448;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .upper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+    margin-top: 2vw;
+  }
+
+  .lower {
+    margin-bottom: 2vw;
+
+    svg {
+      cursor: pointer;
+    }
+  }
+}
+
+.home {
+  background-color: #E5E5E5;
+  padding: 1vw 1vw 1vw 4.6458333333333335vw;
+
+  .home-container {
+    background-color: #fff;
+    min-height: 100vh;
+    border-radius: 20px;
+
+    .search-container {
+      .search-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1vw 1vw 1vw 2vw;
+
+        .input {
+          width: 60%;
+          margin-top: 0;
+        }
+
+        .login-btn {
+          width: 35%;
+          padding: 0.8vw 0.5vw
+        }
+      }
+
+      .view-dropdown {
+        padding: 1vw;
+        display: flex;
+        justify-content: flex-end;
+
+        p {
+          display: flex;
+          align-items: center;
+          font-size: clamp(16px, 0.9375VW, 18px)
+        }
+
+      }
+
+      .admin-view {
+        justify-content: center;
+      }
+
+      .export-sheet {
+        padding: 1vw;
+        display: flex;
+        justify-content: flex-end;
+
+        .export-btn {
+          outline: none;
+          background: linear-gradient(135deg, #FED41A 0%, #F68A1F 34.38%, #C9203E 89.58%);
+          border-radius: 8px;
+          display: inline-block;
+          padding: 1px;
+          text-decoration: none;
+          border: none;
+          transition: 0.5s all;
+
+          span {
+            background: #fff;
+            display: block;
+            border-radius: 6px;
+            padding: 0.5vw 1vw;
+            @include flexCenter;
+            transition: 0.5s all;
+
+            p {
+              font-size: clamp(14px, 0.8333333333333334vw, 16px);
+              color: #F68A1F;
+              transition: 0.5s all;
+
+            }
+
+
+            svg {
+              margin-left: 5px;
+              transition: 0.5s all;
+            }
+          }
+
+          &:hover {
+            color: #fff;
+
+            span {
+              background: linear-gradient(135deg, #FED41A 0%, #F68A1F 34.38%, #C9203E 89.58%);
+
+              P {
+                color: #fff;
+              }
+
+              svg {
+                fill: #fff;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    .sorting-list {
+      padding: 1vw;
+
+      .row {
+        min-height: 5vh;
+      }
+
+      .left-side {
+        display: flex;
+        align-items: center;
+
+        .sorting-item {
+          span {
+            display: flex;
+            background-color: #FFF2E5;
+            align-items: center;
+            padding: 0.5vw;
+            border-radius: 10px;
+            color: #F68A1F;
+            font-weight: 500;
+            font-size: 16px;
+            margin: 0 10px;
+
+            svg {
+              margin: 0 0.625VW;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .right-side {
+        display: flex;
+        justify-content: flex-end;
+
+        a {
+          color: #F68A1F;
+          font-size: clamp(14px, 0.8333333333333334vw, 16px);
+          font-weight: 500;
+          text-decoration: underline;
+        }
+      }
+    }
+
+  }
+
+  .tabel {
+
+    // padding: 1vw;
+    .uk-overflow-auto {
+      max-height: 70vh;
+    }
+
+    .uk-table th {
+      position: relative;
+    }
+
+    .uk-table th,
+    .uk-button-default {
+      text-align: center;
+      color: $primaryColor;
+      font-size: clamp(16px, 0.9375vw, 18px);
+      font-weight: 600;
+      text-transform: capitalize;
+
+      // .table-select {
+      //   width: auto;
+      //   margin: 0;
+
+      //   .table-selectBtn {
+      //     border: none;
+      //     padding: 0;
+      //     font-size: clamp(16px, 0.9375vw, 18px);
+      //     font-weight: 600;
+      //     text-transform: capitalize;
+
+      //   }
+
+      //   .table-option {
+      //     font-size: clamp(14px, 0.8333333333333334vw, 16px);
+      //     font-weight: 400;
+
+      //   }
+
+      //   .table-selectDropdown {
+      //     box-shadow: 0px 4px 24px rgba(196, 202, 212, 0.4);
+      //     border-radius: 12px;
+      //     border: 1px solid #C4CAD4;
+      //     width: 10vw;
+      //     margin-top: 0.5208333333333333VW;
+
+
+      //   }
+      // }
+      .uk-button-default {
+        border: none;
+        // position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: auto;
+          left: 15px;
+          width: 20px;
+          height: 20px;
+          transform: translateY(-50%) rotate(0deg);
+          border-right: 0;
+          border-bottom: 0;
+          transition: 0.2s ease;
+          background: url(../../../assets/imgs/arrow.svg);
+        }
+      }
+
+      .uk-dropdown {
+        padding: 16px 12px;
+        border-radius: $radius;
+        box-shadow: 0px 4px 24px rgba(196, 202, 212, 0.4);
+
+        .uk-dropdown-nav {
+          li {
+            font-size: clamp(14px, 0.8333333333333334vw, 16px);
+            font-weight: 400;
+            color: $primaryColor;
+            text-align: left;
+            padding: 0.3vw 0 0.3vw 0.3vw;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #F0F2F5;
+              border-radius: 8px;
+
+            }
+          }
+        }
+      }
+    }
+
+    tbody {
+      td {
+        color: $secondColor;
+        font-weight: 400;
+        font-size: clamp(14px, 0.8333333333333334vw, 16px);
+
+        .burn-btn {
+          outline: none;
+          background: linear-gradient(135deg, #FED41A 0%, #F68A1F 34.38%, #C9203E 89.58%);
+          border-radius: 8px;
+          display: inline-block;
+          padding: 1px;
+          text-decoration: none;
+          border: none;
+          transition: 0.5s all;
+
+          span {
+            background: #fff;
+            display: block;
+            border-radius: 6px;
+            padding: 0.5vw 1vw;
+            @include flexCenter;
+            transition: 0.5s all;
+
+            p {
+              font-size: clamp(14px, 0.8333333333333334vw, 16px);
+              color: #F68A1F;
+              transition: 0.5s all;
+
+            }
+          }
+        }
+      }
+    }
+
+    .uk-table-hover tbody tr:hover,
+    .uk-table-hover>tr:hover {
+      background-color: #F0F1F5;
+    }
+
+  }
+}

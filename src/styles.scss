@@ -1,0 +1,164 @@
+@import "variables";
+
+// global classes
+.container-fluid {
+  padding-right: 5.729vw;
+  padding-left: 5.729vw;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primaryColor;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0 !important;
+  padding: 0;
+  font-family: Open Sans;
+}
+
+
+h2 {
+  font-size: clamp(20px, 1.7708333333333333VW, 34px);
+}
+
+span {
+  font-size: clamp(14px, 0.8333333333333334vw, 16px)
+}
+
+
+.input {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  background: #F0F1F5;
+  border-radius: $radius;
+  padding: 0.8vw 0.9vw;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  font-size: clamp(14px, 0.8333333333333334vw, 16px);
+  color: $primaryColor;
+
+  &::placeholder {
+    color: $secondColor;
+    font-weight: 400;
+  }
+}
+
+.login-btn {
+  width: 100%;
+  background: $mainColor;
+  border-radius: $radius;
+  font-size: clamp(18px, 0.8333333333333334vw, 24px);
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  @include flexCenter;
+  border: none;
+  outline: none;
+  padding: 0.5vw;
+
+}
+
+
+.select {
+  position: relative;
+  width: 7.416666666666668VW;
+  margin-left: 15px;
+
+  .selectBtn {
+    // background: var(--bg1);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    background: #fff;
+    border: 1px solid #C4CAD4;
+    border-radius: 10px;
+    color: $secondColor;
+    font-size: clamp(14px, 0.8333333333333334vw, 16px);
+    font-weight: 400;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 45%;
+      right: 15px;
+      width: 6px;
+      height: 6px;
+      transform: translateY(-50%) rotate(45deg);
+      border-right: 2px solid #666;
+      border-bottom: 2px solid #666;
+      transition: 0.2s ease;
+    }
+  }
+
+  .selectDropdown {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    border-radius: 0 0 3px 3px;
+    overflow: hidden;
+    // background: var(--bg1);
+    border-top: 1px solid #eee;
+    z-index: 1;
+    background: #fff;
+    transform: scale(1, 0);
+    transform-origin: top center;
+    visibility: hidden;
+    transition: 0.2s ease;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+
+
+    .option {
+      padding: 10px;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      &:hover {
+        background: #f8f8f8;
+
+      }
+    }
+  }
+
+  .selectBtn.toggle {
+    border-radius: 3px 3px 0 0;
+  }
+
+  .select .selectBtn.toggle:after {
+    -webkit-transform: translateY(-50%) rotate(-135deg);
+    transform: translateY(-50%) rotate(-135deg);
+  }
+
+  .selectDropdown.toggle {
+    visibility: visible;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+
+}
+
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

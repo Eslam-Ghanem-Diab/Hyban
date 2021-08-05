@@ -1,0 +1,19 @@
+// colors
+$mainColor : linear-gradient(135deg, #FED41A 0%, #F68A1F 34.38%, #C9203E 89.58%);
+$primaryColor : #364663;
+$secondColor : #626E84;
+$radius : 12px;
+
+// global variables
+
+@mixin bgCenter {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,75 @@
+@import "../../../variables";
+
+#calculate-model,
+#Burn-model,
+#successfully-model {
+  .uk-modal-dialog {
+    width: 27.25VW;
+    border-radius: 20px;
+  }
+
+  [class*=uk-modal-close-] {
+    top: 15px;
+    right: 15px;
+  }
+
+  .uk-modal-close-default {
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+  a {
+    color: #fff;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .login-btn {
+    margin-top: 20px;
+    padding: 0.8vw;
+
+
+  }
+
+  .card-info {
+    .card-info-body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1.0416666666666665VW 0;
+
+      p {
+        color: $primaryColor;
+        font-size: clamp(16px, 0.9375VW, 18px);
+        font-weight: 600;
+      }
+
+      .value {
+        font-size: clamp(18px, 0.9375VW, 20px);
+        background-color: #F0F2F5;
+        border-radius: $radius;
+        padding: 0.5vw;
+        min-width: 70px;
+        @include flexCenter;
+      }
+    }
+  }
+
+  .successfully-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+  h3 {
+    font-size: clamp(18px, 1.25VW, 24px);
+    color: $primaryColor;
+    font-weight: 400;
+  }
+}
+
+}
